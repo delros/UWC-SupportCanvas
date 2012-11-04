@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template support page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="http://css.cdn.tl/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <section class="topbar">
+      <div class="adminbox">
+        <div class="avatar"></div>
+        <strong>Martin Gommelholm</strong><br>
+        <a href="#">Log out</a>
+      </div>
+      <h1>Support panel</h1>
+    </section>
+
+    <section class="client-viewport">
+      <header>
+        <h1>Client's screen dump</h1>
+        <div class="actions">
+          <a href="#">Stop viewport sharing</a>
+          <a href="#">Viewport information</a>
+          <a href="#" data-support-action="open">Toggle chatbox</a>
+        </div>
+      </header>
+      <div id="screenOutputHandler" class="handler">
+        <span>Client's screen canvas placeholder</span>
+      </div>
+    </section>
+
+    <script src="http://localhost:8001/src/app.js"></script>
+    <script src="http://localhost:8001/src/app-support.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        wgtSupportPanel.setup({
+          mode: 'support',
+          name: 'Support',
+          autoinit: true
+        });
+      });
+    </script>
+
+    <div id="supportChatBox" style="display: none;">
+      <div class="supportChatBox_header">
+        <h1>Client</h1>
+        <div class="supportChatBox_headerActions">
+          <a href="#" data-support-action="open">close</a>
+        </div>
+      </div>
+      <div class="supportChatBox_output"></div>
+      <div class="supportChatBox_control">
+        <textarea></textarea>
+        <button>Send</button>
+        <a href="#" data-action="loadClientScreen" class="enabled">Load client's screen</a>
+        <a href="#" data-action="togglePointer">
+          Turn <strong>ON</strong> pointer traking
+        </a>
+        <a href="#" data-action="toggleClickPlace">
+          Turn <strong>ON</strong> share click places
+        </a>
+      </div>
+    </div>
+
+
+    <footer>
+      2012 <a href="http://github.com/">GitHub</a> <a href="http://iii.uwc.org.ua/">UWC</a> <br>
+      Used such OpenSource projects as <a href="https://github.com/jquery/jquery">jQuery</a>, <a href="https://github.com/niklasvh/html2canvas">html2canvas</a> for rendering HTML to canvas, forked <a href="https://github.com/uwcorgua/socketAPI">socketAPI</a> which implements server scripts
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+$topbarBackgroundFrom: #222222;
+$topbarBackgroundTo: #111111;
+$topbarHeight: 40px;
+
+@mixin rounded-borders($color: black, $border-weight: 1px, $radius: 5px) {
+  border: $border-weight solid $color;
+  border-radius: $radius;
+  overflow: hidden;
+  -webkit-background-clip: padding-box; 
+     -moz-background-clip: padding; 
+          background-clip: padding-box;
+}
+
+@mixin bg-gradient($from: #eee, $to: #ddd) {
+  background: $to;
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from,  $to); 
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#{ie-hex-str($from)}', endColorstr='#{ie-hex-str($to)}');
+  // -pie-background: linear-gradient(#EEFF99, #66EE33);
+  // behavior: url(../vendors/PIE.htc);
+}
+
+@mixin bg-remove {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+@mixin text-cut { 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: normal 12px/18px arial;
+  
+  a {
+    color: #0088CC;
+
+    &:hover {
+      color: #005580;
+    }
+  }
+}
+.topbar {
+  @include bg-gradient($topbarBackgroundFrom, $topbarBackgroundTo);
+  height: $topbarHeight;
+  -webkit-box-shadow: 0px 1px 5px #888888;
+     -moz-box-shadow: 0px 1px 5px #888888;
+          box-shadow: 0px 1px 5px #888888;
+
+  h1 {
+    margin: 0 20px;
+    line-height: $topbarHeight;
+    display: block;
+    float: right;
+    font-size: 20px;
+    color: #DDDDDD;
+    text-shadow: 0 1px 0 #000000;
+  }
+  .adminbox {
+    float: left;
+    width: 300px;
+    margin: 0 20px;
+    padding: 5px 0;
+    color: #DDDDDD;
+    line-height: 15px;
+    text-shadow: 0 1px 0 #000000;
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px 0 0;
+      background: #666;
+      float: left;
+    }
+  }
+}
+.client-viewport {
+  float: left;
+  width: 70%;
+  margin: 20px 0 0 20px;
+
+  header { 
+    overflow: auto;
+    height: 50px;
+
+    h1 {
+      float: left;
+      margin: 0;
+      line-height: 50px;
+    }
+    .actions {
+      text-align: right;
+      line-height: 50px;
+
+      a {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+  }
+  .handler {
+    border: 2px solid #333333;
+    box-shadow: 0 0 5px 0 #333333 inset;
+    padding: 10px;
+
+    img {
+      width: 100%;
+    }
+    span {
+      color: #999999;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+footer {
+  float: none;
+  clear: both;
+  padding: 40px 0 10px;
+  text-align: center;
+  color: #333;
+}
+
+#supportChatBox {
+  .supportChatBox_control {
+    a {
+      color: #999999;
+
+      &.enabled {
+        color: #0088CC;
+      }
+    }
+  }
+}
