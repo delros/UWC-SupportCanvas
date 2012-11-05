@@ -24,6 +24,7 @@ wgt = (function (obj) {
     this.loadJs(this.pref.pathApi + '/src/vendors/socket.io/socket.io.js');
     this.loadJs(this.pref.pathApi + '/src/vendors/html2canvas/html2canvas.js');
     this.loadCss(this.pref.pathApi + '/src/app.css');
+    this.loadMarkup();
 
     var that = this,
         $chatBox = $(this.pref.chatBox),
@@ -228,6 +229,28 @@ wgt = (function (obj) {
     head.appendChild(script);
 
     return true;
+  }
+
+  obj.loadMarkup = function (placeholder) {
+    var handler = placeholder || 'body' 
+      , html;
+
+    html = 
+    '<div id="supportChatBox" data-html2canvas-ignore="true">' +
+      '<div class="supportChatBox_header">' +
+        '<h1>Support</h1>' +
+        '<div class="supportChatBox_headerActions">' +
+          '<a href="#" data-support-action="open">close</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="supportChatBox_output"></div>' +
+      '<div class="supportChatBox_control">' +
+        '<textarea></textarea>' +
+        '<button>Send</button>' +
+     ' </div>' +
+    '</div>';
+
+    $(html).appendTo(handler);
   }
 
   return obj; 

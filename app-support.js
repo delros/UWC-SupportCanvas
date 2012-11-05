@@ -88,5 +88,34 @@ wgtSupportPanel = (function (obj) {
     });    
   }
 
+  obj.loadMarkup = function (placeholder) {
+    var handler = placeholder || 'body' 
+      , html;
+
+    html = 
+    '<div id="supportChatBox">' +
+      '<div class="supportChatBox_header">' +
+        '<h1>Client</h1>' +
+        '<div class="supportChatBox_headerActions">' +
+          '<a href="#" data-support-action="open">close</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="supportChatBox_output"></div>' +
+      '<div class="supportChatBox_control">' +
+        '<textarea></textarea>' +
+        '<button>Send</button>' +
+        '<a href="#" data-action="loadClientScreen" class="enabled">Load client\'s screen</a>' +
+        '<a href="#" data-action="togglePointer">' +
+          'Turn <strong>ON</strong> pointer traking' +
+       ' </a>' +
+        '<a href="#" data-action="toggleClickPlace">' +
+          'Turn <strong>ON</strong> share click places' +
+        '</a>' +
+      '</div>' +
+    '</div>';
+
+    $(html).appendTo(handler);
+  }
+
   return obj;
 }(wgt));
