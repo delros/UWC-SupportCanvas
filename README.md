@@ -18,7 +18,7 @@ Not now, but it will be published
 * Implements the posibility to render HTML to canvas (using the [html2canvas](https://github.com/niklasvh/html2canvas)) and send it to the support
 * Support can see received client's screendump and show user where he can find some missed thing
 
-## How to use it
+## How to use it?
 
 You can place this code on any page you have to initialize the support widget
 

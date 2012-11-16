@@ -1,0 +1,20 @@
+{
+  "name": "UWC-SupportCanvas",
+  "version": "0.0.0",
+  "description": "Simple websocket API for support widget. Inspired on the 'socketAPI' solution from Eldar Djafarov <djkojb@gmail.com>",
+  "main": "./backend/api.js",
+  "scripts": {
+    "start": "node ./backend/api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/delros/UWC-SupportCanvas.git"
+  },
+  "dependencies": {
+    "node-static": "latest",
+    "socket.io": "latest"
+  },
+  "author": "del Rosario Ernesto <delrosario.ernesto@gmail.com>",
+  "license": "BSD"
+}
