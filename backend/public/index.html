@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UWC-SupportCanvas</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+      
+        <h1>UWC-SupportCanvas</h1>
+        <p>Author: <a href="https://github.com/delros">del Rosario Ernesto</a></p>
+        
+        <h3>Overview</h3>
+        <p>Simple websocket API for <a href="https://github.com/delros/UWC-SupportCanvas">UWC-SupportCanvas</a>. Inspired on the 'socketAPI' solution from <a href="https://github.com/edjafarov">Eldar Djafarov</a></p>
+        
+        <h3>Demo</h3>
+        <p>Check please clients page demo and admin dashboard demo pages under the directory <code>demo</code></p>
+        
+        <h3>Usage</h3>
+        <p>For connecting support widget to any page you need to append these code to any place on your page. Just change path to backend based on nodeJS to correct one.</p>
+        
+<pre>
+&lt;script src=&quot;http://localhost:8001/src/app.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  $(document).ready(function () {
+    wgt.setup({
+      name: 'James Willson'
+    });
+  });
+&lt;/script&gt;        
+</pre>
+        
+        <p>Also you need to have a toggler for chat box on your page. By the default we have an example which you can use.</p>
+        
+<pre>
+&lt;a href=&quot;#&quot; id=&quot;supportWidgetToggler&quot; data-support-action=&quot;open&quot; data-html2canvas-ignore=&quot;true&quot;&gt;
+  Toggle support
+&lt;/a&gt;
+</pre>
+        
+        <p>You can create any unique toggle what you will like, but in this case you need to keep the data attributes on it <code>data-support-action="open"</code> and <code>data-html2canvas-ignore="true"</code></p>
+        
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
